@@ -45,3 +45,7 @@ window.addEventListener("resize", function() {
 });
 AI-generated code. Review and use carefully. More info on FAQ.
 Remember that event listeners enhance interactivity and separate JavaScript from HTML markup, improving readability and maintainability of your code1. 🌟 1: W3Schools - JavaScript DOM EventListener
+
+```
+
+1. It's coming under EventTarget interface
