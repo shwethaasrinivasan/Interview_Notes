@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Basic styling */
+        #content div {
+            padding: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<div id="content">
+    <div>Initial content loaded here</div>
+</div>
+
+<script>
+    window.addEventListener('scroll', () => {
+        if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
+            // Simulating loading more content
+            const newContent = document.createElement('div');
+            
+            newContent.forEach( (e) => {
+                for(i = 0; i<=1000; i++){
+                    e.target.textContent = 'More content loaded';
+                }
+            });
+            document.getElementById('content').appendChild(newContent);
+        }
+    });
+</script>
+
+</body>
+</html>

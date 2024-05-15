@@ -1,0 +1,9 @@
+#todo-list li {
+    cursor: pointer;
+    list-style-type: none;
+    padding: 8px;
+    margin: 5px;
+    background-color: #f9f9f9;
+    border: 1px solid #e2e2e2;
+}
+

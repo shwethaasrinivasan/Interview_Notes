@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Basic styling */
+        .page-item {
+            display: inline-block;
+            padding: 5px 10px;
+            margin-right: 5px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+        .active {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div id="content">
+    <!-- Content for the current page will be loaded here -->
+</div>
+<div id="pagination">
+    <!-- Pagination links will be generated here -->
+</div>
+
+<script>
+    let currentPage = 1;
+    const totalPages = 10; // Assuming there are 10 pages
+
+    function loadPage(page) {
+        // Ideally, fetch data from a server based on the page number
+        document.getElementById('content').textContent = `Content for page ${page}`;
+        currentPage = page;
+        updatePagination();
+    }
+
+    function updatePagination() {
+        const pagination = document.getElementById('pagination');
+        pagination.innerHTML = ''; // Clear existing pagination links
+        for (let i = 1; i <= totalPages; i++) {
+            const pageItem = document.createElement('span');
+            pageItem.textContent = i;
+            pageItem.className = 'page-item';
+            if (i === currentPage) {
+                pageItem.classList.add('active');
+            }
+            pageItem.addEventListener('click', () => loadPage(i));
+            pagination.appendChild(pageItem);
+        }
+    }
+
+    // Initial load
+    loadPage(currentPage);
+
+</script>
+
+</body>
+</html>

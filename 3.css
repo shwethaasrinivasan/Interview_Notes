@@ -1,0 +1,15 @@
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    font-size: 30px;
+}
+
+.star {
+    cursor: pointer;
+    color: #ccc; /* Default star color */
+}
+
+.star:hover,
+.star:hover ~ .star {
+    color: gold; /* Color when hovered */
+}

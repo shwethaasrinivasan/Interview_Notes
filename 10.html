@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .popover {
+            display: none;
+            position: absolute;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+<button id="popoverButton">Click me</button>
+<div class="popover" id="myPopover">This is a popover!</div>
+
+<script>
+    document.getElementById('popoverButton').addEventListener('click', function(event) {
+        var popover = document.getElementById('myPopover');
+        popover.style.display = 'block';
+        popover.style.left = event.clientX + 'px';
+        popover.style.top = event.clientY + 'px';
+    });
+</script>
+
+</body>
+</html>

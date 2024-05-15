@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .accordion-content { display: none; }
+        .accordion-content.active { display: block; }
+    </style>
+</head>
+<body>
+
+<button class="accordion">Section 1</button>
+<div class="accordion-content">
+  <p>This is section 1.</p>
+</div>
+
+<button class="accordion">Section 2</button>
+<div class="accordion-content">
+  <p>This is section 2.</p>
+</div>
+
+<script>
+    document.querySelectorAll('.accordion').forEach(button => {
+        button.addEventListener('click', () => {
+            const content = button.nextElementSibling;
+            content.classList.toggle('active');
+        });
+    });
+</script>
+
+</body>
+</html>

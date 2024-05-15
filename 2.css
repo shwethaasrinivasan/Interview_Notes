@@ -1,0 +1,25 @@
+/* Container for the search input */
+.search-container {
+    max-width: 600px; /* Limiting the width for larger screens */
+    margin: 20px auto; /* Centering the search container */
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow for depth */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #fff; /* White background */
+}
+
+/* Style for the input field */
+#search-input {
+    width: 100%; /* Make input stretch to container width */
+    padding: 8px 10px; /* Padding for spacing inside the input */
+    font-size: 16px; /* Larger font size for better readability */
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 4px; /* Rounded corners for the input field */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+#search-input:focus {
+    outline: none; /* Remove the default focus highlight */
+    border-color: #007bff; /* Highlight input with a blue border on focus */
+    box-shadow: 0 0 0 2px rgba(0,123,255,.25); /* Soft glow effect */
+}
