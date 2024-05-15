@@ -19,6 +19,8 @@ console.log(containsDuplicate(nums2)); // Output: false
 const nums3 = [1, 1, 1, 3, 3, 4, 3, 2, 4, 2];
 console.log(containsDuplicate(nums3)); // Output: true
 
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_Wchaining
+
 
 // function containsDuplicate(nums) {
 //     nums.sort((a, b) => a - b); // Sort the array in ascending order
