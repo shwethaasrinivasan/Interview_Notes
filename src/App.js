@@ -21,8 +21,8 @@ function App() {
   const [cart, setCart] = useState([]);
   const [filter, setFilter] = useState("");
 
-  const handleSearch = (changeEvent) => {
-    const value = changeEvent.target.value.toLowerCase();
+  const handleChange = (event) => {
+    const value = event.target.value.toLowerCase();
     const filteredBySearch = initialItems.filter(
       (item) =>
         item.name.toLowerCase().includes(value) &&
@@ -83,7 +83,7 @@ function App() {
     <div className="App">
       <h1 className="title">Food Ordering App</h1>
       <SearchFilterSort
-        onSearch={handleSearch}
+        onSearch={handleChange}
         onFilter={handleFilter}
         onSort={handleSort}
         filter={filter}
