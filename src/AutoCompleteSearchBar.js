@@ -18,11 +18,7 @@ const AutoCompleteSearchBar = () => {
     const userInput = e.target.value;
     setQuery(userInput);
 
-    const filteredSuggestions = userInput
-      ? items.filter((item) =>
-          item.toLowerCase().startsWith(userInput.toLowerCase())
-        )
-      : [];
+    const filteredSuggestions = userInput ? items.filter( (item) => item.toLowerCase().startsWith(userInput.toLowerCase()) ) : [];
 
     setSuggestions(filteredSuggestions);
   };
