@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File/Folder Viewer</title>
+    <style>
+
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    #foldersContainer {
+        margin: 20px;
+    }
+
+    .folder, .file {
+        margin-left: 20px;
+        border-left: 2px solid #ccc;
+        padding-left: 8px;
+        position: relative;
+    }
+
+    .folder::before, .file::before {
+        content: '';
+        /* content is Mandatory for the pseudo-element to display */
+        position: absolute;
+        left: -10px;
+        top: 0;
+        height: 100%;
+        width: 10px;
+    }
+
+    /* To establish a positioning context for absolutely positioned child elements: If an element has position: relative;, any child element of it that uses position: absolute; 
+    will be positioned relative to this parent element, rather than to the viewport or another ancestor element. This is crucial for layouts where you need precise control over 
+    the positioning of nested elements, such as in a dropdown menu, modal dialog, or tooltip, where the positioned child should move along with its parent.
+
+    To adjust the element's position without altering the document flow: Applying position: relative; to an element allows you to use the top, right, bottom, and left properties 
+    to move the element from its normal position in the document flow to a new position relative to itself. The space it originally took up remains in the flow, preventing other 
+    elements from moving into its original position. This is useful for fine-tuning layouts, creating overlapping content, or for visual effects where slight adjustments are needed 
+    without disrupting the overall layout structure.
+
+    In summary, position: relative; is used for establishing a new positioning context within the document and for making minor adjustments to an element's 
+    position while maintaining its place in the document flow. This makes it a versatile tool in the CSS positioning model, allowing for complex and responsive designs. */
+
+    .folder::before {
+        background-color: #ffa500; 
+    }
+
+    .file::before {
+        background-color: #00BFFF; 
+    }
+
+    </style>
+</head>
+<body>
+
+<div id="foldersContainer">
+    <div class="folder">Folder 1
+        <div class="file">File 1.1</div>
+        <div class="file">File 1.2</div>
+            <div class="folder">Folder 1.1 
+                <div class="file">File 1.1.1</div>
+                <div class="file">File 1.1.2</div>
+            </div>
+    </div>
+    <div class="folder">Folder 2
+        <div class="file">File 2.1</div>
+            <div class="folder">Folder 2.1
+                <div class="file">File 2.1.1</div>
+                <div class="file">File 2.1.2</div>
+            </div>
+        <div class="file">File 2.2</div>
+            <div class="folder">Folder 2.2
+                <div class="file">File 2.2.1</div>
+                <div class="file">File 2.2.2</div>
+            </div>
+    </div>
+</div>
+
+<!-- <script>
+    // document.addEventListener('DOMContentLoaded', () => {
+        const folders = document.querySelectorAll('.folder');
+    
+        folders.forEach(folder => {
+            folder.addEventListener('click', function(event) {
+                event.stopPropagation();  // Prevents the event from bubbling up the DOM
+                this.querySelectorAll('.folder, .file').forEach(child => {
+                    child.style.display = child.style.display === 'none' ? 'block' : 'none'; // toggles the visibility of an element: if the element is visible, it gets hidden; if it's hidden, it becomes visible
+                });
+            });
+        });
+    // });
+    </script> -->
+
+    <script>
+        // Assuming all .folder elements are contained within a parent with the ID #foldersContainer
+    const foldersContainer = document.getElementById('foldersContainer');
+
+    foldersContainer.addEventListener('click', function(event) {
+        // Check if the clicked element has the class 'folder'
+        if (event.target.classList.contains('folder')) {
+            event.target.querySelectorAll('.folder, .file').forEach(child => {
+                child.style.display = child.style.display === 'none' ? 'block' : 'none';
+            });
+        }
+    });
+
+    </script>
+    
+
+</body>
+</html>

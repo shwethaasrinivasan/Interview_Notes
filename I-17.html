@@ -1,0 +1,84 @@
+```js
+
+1. Selecting Elements
+Before you can manipulate an element, you need to select it. There are several methods to select elements:
+
+getElementById: Selects an element by its ID.
+
+const element = document.getElementById('elementId');
+
+querySelector: Uses CSS selectors to select the first matching element.
+
+const firstButton = document.querySelector('button');
+
+querySelectorAll: Similar to querySelector, but selects all matching elements and returns a NodeList.
+
+const allButtons = document.querySelectorAll('button');
+
+2. Changing Element Content
+textContent: Sets or returns the text content of the selected elements.
+
+element.textContent = 'New text content';
+
+innerHTML: Sets or gets the HTML content inside the element.
+
+element.innerHTML = '<span>New HTML content</span>';
+
+3. Modifying Styles
+You can change the style of an element by accessing the style property:
+
+element.style.color = 'blue';
+element.style.backgroundColor = 'yellow';
+
+4. Adding or Removing Elements
+createElement: Creates a new element.
+
+const newElement = document.createElement('div');
+
+appendChild: Adds a new child element to a parent element.
+
+parentElement.appendChild(newElement);
+
+removeChild: Removes a child element from a parent.
+
+parentElement.removeChild(childElement);
+
+replaceChild: Replaces a child element with another.
+
+parentElement.replaceChild(newElement, oldElement);
+
+5. Adding or Removing Classes
+classList.add: Adds a class to an element.
+
+element.classList.add('new-class');
+
+classList.remove: Removes a class from an element.
+
+element.classList.remove('old-class');
+
+classList.toggle: Toggles a class on an element.
+
+element.classList.toggle('active');
+
+6. Event Handling
+To make your page interactive, you can add event listeners to elements:
+
+element.addEventListener('click', function() {
+  alert('Element clicked!');
+});
+
+7. Attribute Manipulation
+setAttribute: Adds a new attribute or changes the value of an existing attribute on the selected element.
+
+element.setAttribute('href', 'https://www.codedamn.com');
+
+getAttribute: Returns the value of a specified attribute.
+
+const attributeValue = element.getAttribute('href');
+
+removeAttribute: Removes a specified attribute from an element.
+
+element.removeAttribute('href');
+
+```
+

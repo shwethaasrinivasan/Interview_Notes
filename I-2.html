@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tooltip Example</title>
+<style>
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    margin-top: 15px;
+  }
+
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;  
+    /* top | right | bottom | left */
+    position: absolute;
+    z-index: 1;
+    /* z-index -> stacking order of elements that overlap each other along z-axis. higher values mean the element will be closer to the user */
+    bottom: 100%;
+    /* left: 50%; */
+    /* margin-left: -60px; */
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+</style>
+</head>
+<body>
+
+<div class="tooltip">Hover over me
+  <span class="tooltiptext">I'm your tooltip</span>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debounce</title>
+</head>
+<body>
+    <input type="text" onkeyup="betterFunction()"/>
+    <script>
+    let counter = 0;
+    const getData = () => {
+        // Calls an API and gets Data
+        console.log("Fetching Data ...", counter++);
+    }
+
+    const throttle = function(fn, d) {
+        let timer;
+        return function() {
+            const context = this,
+                args = arguments;
+            if (!timer) {
+                fn.apply(context, args);
+                timer = true;
+                setTimeout(() => timer = false, d);
+            }
+        }
+    }
+
+    const betterFunction = throttle(getData, 3000);
+ 
+
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid with Cards</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; /* Spacing between cards */
+            padding: 20px; /* Padding around the grid */
+        }
+        .card {
+            flex-grow: 1;
+            flex-basis:0%;
+            min-width: calc(33.333% - 20px);
+            margin-bottom: 10px; /* Vertical spacing */
+            background-color: #f0f0f0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        @media (max-width: 600px) {
+            .card {
+                flex-basis: 100%; /* Each card takes full width on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">Card 1</div>
+    <div class="card">Card 2</div>
+    <div class="card">Card 3</div>
+    <div class="card">Card 4</div>
+    <div class="card">Card 5</div>
+    <div class="card">Card 6</div>
+</body>
+</html>

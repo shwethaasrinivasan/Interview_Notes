@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pixel Perfect Button</title>
+<style>
+  *,::before,::after{
+    margin: 10px;
+    padding:10px;
+  }
+  #pixel-perfect-button {
+    width: 200px;
+    height: 50px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s; 
+    /* propertyname | duration | easing function | delay | behavior */
+  }
+  #pixel-perfect-button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+<!-- button event -->
+<button id="pixel-perfect-button">Click Me</button>
+
+<script>
+  document.getElementById("pixel-perfect-button").addEventListener("click",(e)=>{
+    console.log("I'm Clicked")
+  })
+</script>
+
+<!-- focus event -->
+<input type="text" id="myInput" placeholder="Enter text here">
+
+<script>
+document.getElementById("myInput").addEventListener("focus", function() {
+    console.log("Input field is focused");
+});
+</script>
+
+<!-- double click -->
+<button id="pixel-perfect-button">Double Click Me</button>
+
+<script>
+document.getElementById("pixel-perfect-button").addEventListener("dblclick", () => {
+  console.log("Button was double-clicked!");
+});
+</script>
+
+<!-- mouse over and out -->
+
+<div id="hover-area" style="width: 200px; height: 100px; background-color: lightblue;">
+  Hover Over Me
+</div>
+
+<script>
+const hoverArea = document.getElementById("hover-area");
+hoverArea.addEventListener("mouseover", () => {
+  console.log("Mouse is over the area!");
+});
+hoverArea.addEventListener("mouseout", () => {
+  console.log("Mouse left the area!");
+});
+</script>
+
+<!-- key press event -->
+<input id="key-input" type="text" placeholder="Type something...">
+
+<script>
+document.getElementById("key-input").addEventListener("keydown", (e) => {
+  console.log(`Key "${e.key}" pressed`);
+});
+</script>
+
+<!-- resize event -->
+
+<script>
+  window.addEventListener("resize", () => {
+    console.log("Window was resized!");
+  });
+  </script>
+
+<!-- scroll event -->
+<div id="scrollable" style="overflow: auto; width: 100%; height: 200px;">
+  <div style="height: 800px;">
+    Scroll in this box
+  </div>
+</div>
+
+<script>
+document.getElementById("scrollable").addEventListener("scroll", () => {
+  console.log("You scrolled!");
+});
+</script>
+
+<!-- change event -->
+
+<input id="text-change" type="text">
+
+<script>
+document.getElementById("text-change").addEventListener("change", () => {
+  console.log("The text was changed!");
+});
+</script>
+
+
+</body>
+</html>

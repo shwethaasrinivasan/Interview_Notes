@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Gallery</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        body {
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .image img {
+            width: 100%;
+            height: auto;
+            display: block; /* Removes extra space below the image */
+        }
+
+        @media (max-width: 600px) {
+            .gallery {
+                grid-template-columns: repeat(1, 1fr); /* 1 column on smaller screens */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <div class="image"><img src="image-1.png" alt="Placeholder"></div>
+        <div class="image"><img src="image-1.png" alt="Placeholder"></div>
+        <div class="image"><img src="image-1.png" alt="Placeholder"></div>
+        <div class="image"><img src="image-1.png" alt="Placeholder"></div>
+        <div class="image"><img src="image-1.png" alt="Placeholder"></div>
+        <div class="image"><img src="image-1.png" alt="Placeholder"></div>
+    </div>
+</body>
+</html>

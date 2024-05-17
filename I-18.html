@@ -1,0 +1,48 @@
+<!-- Horizontal Navigation Bar
+Create a horizontal navigation bar where menu items are evenly spaced across the width of the bar. The navigation bar should be responsive, adjusting to the width of the viewport.
+
+Requirements:
+
+Use Flexbox to space the navigation links evenly.
+Ensure the navigation bar is responsive and takes the full width of its container.
+Menu items should have some padding for clickability and aesthetics. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Navigation bar</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+        background-color: #767a7e;
+        height: 10%;
+        width: 20%;
+        margin-top: 10px;
+        border:10px;
+        padding: 10px;
+        }
+
+        .navigation-bar{
+            display: flex;
+            flex-direction: flex-start;
+        }
+
+        .menu-item{
+            padding: 10px;
+            margin-top:10px;
+            border: 10px
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navigation-bar">
+        <div class="menu-item"></div>
+    </div>
+</body>
+</html>

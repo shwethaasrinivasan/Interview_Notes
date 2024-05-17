@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Object</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            background-color: azure;
+            padding: 0;
+            margin: 0;
+        }
+        .media-container {
+            display: flex;
+            padding: 10px;
+            align-items: flex-start; /* Align items at the start of the cross axis */
+        }
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px; /* Adds some space between the images and the text */
+        }
+        .image {
+            height: 100px; /* Adjusted for demonstration */
+            width: 100px;
+            margin-bottom: 10px; /* Adds space between stacked images */
+        }
+        .text-container {
+            flex-grow: 1; /* Allows the text container to grow and fill the remaining space */
+            display: flex;
+            flex-direction: column;
+
+        }
+        .stretch{
+            /* justify-content: flex-start; */
+            align-items: stretch;
+            padding: 30px;
+        }
+        @media (max-width: 600px) {
+            .media-container {
+                flex-direction: column;
+            }
+            .image-container {
+                margin-right: 0;
+                margin-bottom: 20px; /* Add some space between the images and the text on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="media-container">
+        <div class="image-container">
+            <img class="image" src="image-1.png" alt="Image">
+            <img class="image" src="image-1.png" alt="Image">
+            <img class="image" src="image-1.png" alt="Image">
+        </div>
+        <div class="text-container">
+            <p class="stretch">Hey, I'm trying to type something.Let me clarify things</p>
+            <p class="stretch">Hey, I'm trying to type something.</p>
+            <p class="stretch">Hey, I'm trying to type something.</p>
+        </div>
+    </div>
+</body>
+</html>

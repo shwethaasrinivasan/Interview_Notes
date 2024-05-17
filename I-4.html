@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debounce</title>
+</head>
+<body>
+    <input type="text" onkeyup="betterFunction()"/>
+    <script>
+    let counter = 0;
+    const getData = () => {
+    // calls an API and gets Data
+    console.log("Fetching Data ..", counter++);
+    }
+
+    const debounce = function (fn, d) {
+    let timer;
+    return function () {
+        let context = this, //By capturing this in a variable (context), you preserve the context that was intended when the outer function was called. 
+                            // This allows you to use apply or call to invoke the function with the correct context later.
+                            
+        args = arguments;   //Capturing arguments allows the function to be called with the exact same arguments as the original invocation,
+                            // even if it's executed asynchronously or after a delay, which is common in debounce and throttle patterns.
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+        getData.apply(context, arguments);
+        }, d);
+    }
+    }
+
+    const betterFunction = debounce(getData, 3000);    
+
+    </script>
+</body>
+</html>
+
+

@@ -8,7 +8,8 @@
 8. Accordian
 9. AutoComplete - In React_Practice Folder
 10. Popover
-11. Carousel
-12. Infinite Scroll
-13. Pagination
+11. Carousel - Optional
+12. Infinite Scroll - Optional  In React_Practice Folder
+13. Pagination - Optional  In React_Practice Folder
 14. Food Ordering App - In ReactPrep Folder
+15. Find Previous, Next, Match Case, RegExp By Word

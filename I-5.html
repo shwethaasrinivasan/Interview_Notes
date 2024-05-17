@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model</title>
+    <style>
+        div {
+            width: 200px;
+  height: 100px; /* Adjust height as needed */
+  margin: 20px;
+  padding: 10px; /* Reduced padding */
+  border: 5px solid #333; /* Adjusted border thickness */
+  background-color: lightblue;
+  text-align: center;
+  line-height: 70px; /* Adjust line-height for vertical centering */
+  font-size: 14px; /* Adjust font size as needed */
+        }
+
+        .content-box {
+        box-sizing: content-box; /* Default, not actually required to be specified */
+        }
+
+        .border-box {
+        box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-box">Content Box</div>
+    <div class="border-box">Border Box</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infinite Scroll Example</title>
+<style>
+  #content {
+    height: 300px;
+    overflow: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  .item {
+    margin-bottom: 10px;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+</style>
+</head>
+<body>
+
+<div id="content">
+  <div class="item">Item 1</div>
+  <div class="item">Item 2</div>
+  <div class="item">Item 3</div>
+  <!-- More items will be appended here -->
+</div>
+
+<script>
+// Function to simulate loading new content
+function loadMoreContent() {
+  const content = document.getElementById('content');
+  for (let i = 0; i < 5; i++) { // Load 5 new items
+    const newItem = document.createElement('div');
+    newItem.classList.add('item');
+    newItem.textContent = 'New Item ' + (content.children.length + 1);
+    content.appendChild(newItem);
+  }
+}
+
+// Event listener for scroll event
+document.getElementById('content').addEventListener('scroll', function() {
+  const content = this;
+  // Check if scrolled to the bottom
+  if (content.scrollHeight - content.scrollTop === content.clientHeight) {
+    loadMoreContent(); // Load more content
+  }
+});
+</script>
+
+</body>
+</html>
